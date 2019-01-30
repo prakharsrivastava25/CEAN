@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+    <h4>
+     Click to display data
+    </h4>
+<button (click)="clickMe()" >Click Me</button>
+<ul>
+  <li *ngFor="let a of data">id:{{a.id}} name:{{a.name}} city:{{a.city}}</li>
+  </ul>
+  <!-- <label>
+    Id:
+    <input type="text" [formControl]="id">
+  </label>
+  <label>
+    Name:
+    <input type="text" [formControl]="name">
+  </label>
+  <label>
+    City:
+    <input type="text" [formControl]="city">
+  </label> -->
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" novalidate>
+    <input name="id" ngModel placeholder="id">
+    <input name="name" ngModel placeholder="name">
+    <input name="city" ngModel placeholder="city">
+    <button>Submit</button>
+  </form>
+
+<router-outlet></router-outlet>
